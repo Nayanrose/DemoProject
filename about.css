@@ -1,0 +1,412 @@
+
+/* -------------------------NAVBAR--------------------------------------- */
+body {
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.icon img{
+    width: 120px;
+    height: 120px;
+}
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077b5;
+    height: 5vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1001;
+    
+    
+
+}
+
+.nav-links {
+    flex: 1;
+    position: fixed;
+    left: 60vw;
+    height: fit-content;
+    min-width: fit-content;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+    
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f1f3f4;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+/* Media Queries for screens smaller than 800px */
+@media (max-width: 800px) {
+    .icon img{
+        width: 50px;
+        height: 50px;
+    }
+    .nav-links {
+        display: none;
+        position: fixed; 
+        left: 50%;       
+        top: 7vh;
+        background-color: #0077b5;
+        width:50%;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+   
+
+    .nav-links ul {
+        flex-direction: column;
+    }
+
+    .nav-links ul li {
+        display: block;
+        margin: 20px 0;
+    }
+
+    .menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Ensures space between lines */
+        cursor: pointer;
+        width: 20px;
+        height: 15px;
+        position: relative;
+        left: -10vw;
+    }
+
+    .menu-icon span {
+        width:100%;
+        height: 2px;
+        /* margin: 4px auto; */
+        background-color: white;        
+    }
+}
+
+/* Display the nav-links on click (optional toggle behavior, requires JS) */
+.show-nav {
+    display: flex;
+}
+
+.nav-links ul li {
+    list-style: none;
+    /* display: inline-block; */
+    padding: 8px 12px;
+    position: relative;
+}
+
+.dropdown {
+    display: none; /* Hide the dropdown by default */
+    position: absolute;
+    background-color: #0077b5;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    top: 100%; /* Position below the parent */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1000;
+}
+
+.nav-links ul li:hover .dropdown {
+    display: block; /* Show the dropdown on hover */
+    
+}
+
+.dropdown span {
+    display: block;
+    padding: 5px 0; /* Add some spacing between items */
+}
+@media(max-width: 1000px){
+    .dropdown {
+        display: none; /* Hide the dropdown by default */
+        top: 100%; /* Position below the parent */
+        text-align: left;
+       
+    }
+    .dropdown span {
+        display: block;
+        padding: 5px 0; /* Add some spacing between items */
+    }
+}
+
+
+
+
+
+/* -------------------------ABOUT--------------------------------------- */
+
+
+.aboutus {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    min-height: 100vh; /* Ensure it takes enough space */
+    padding-bottom:5vh; /* Add padding to create space between content and footer */
+    padding-top: 20vh;
+    box-sizing: border-box;
+}
+.about, .vision, .mission{
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid rgb(0, 255, 200); */
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+
+}
+
+.pic, .wrt{
+    /* border: 2px solid rgb(132, 0, 255); */
+    width: 50%;
+    text-align: justify;
+    
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+.wrt{
+    padding: 20px 80px 20px 80px;
+    box-sizing: border-box;
+    max-width: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: fit-content;
+}
+/* Hover effect for wrt */
+.wrt:hover {
+    transform: scale(1.02); /* Slight zoom in on hover */
+}
+
+.wrt h1{
+    text-align: center;
+    
+}
+
+
+.pic{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+   
+}
+.pic1{
+    background-image: url(images/teamwork.jpg);
+}
+.pic2{
+    background-image: url(images/target.jpg);
+    background-position: top;
+
+}
+.pic3{
+    background-image: url(images/time.jpg);
+    background-position: bottom;
+}
+
+/* Styles for screens smaller than 800px */
+@media(max-width: 800px) {
+
+    .aboutus {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: -10vh; /* Adjust the position to be closer to the top on small screens */
+        width: 90%; /* Ensure full width on small screens */
+        margin: 0 auto;
+        padding-bottom: 0;
+        /* border: 1px solid black; */
+    }
+
+    .about, .vision, .mission {
+        flex-direction: column; /* Stack the sections vertically */
+        justify-content: center; /* Center the content */
+        height: auto;
+        align-items: center; /* Center the items */
+        width: 100%;
+        /* border: 3px solid black; */
+    }
+
+    .wrt, .pic {
+        width: 100%; /* Make the text and image take full width */
+        height: auto; /* Let height adjust based on content */
+        padding: 10px 20px; /* Reduce padding for better fit on small screens */
+        box-sizing: border-box;
+        background-position: center;
+    }
+
+    .wrt {
+        padding: 20px; /* Smaller padding on text content */
+        max-width: 100%; /* Allow the text to take full width */
+    }
+
+    .pic {
+        height: 200px; /* Set a reasonable height for images */
+    }
+
+    .pic1, .pic2, .pic3 {
+        background-size: cover; /* Ensure the images cover the section */
+        background-position: center; /* Center the background image */
+        object-fit: cover;
+    }
+
+    .wrt h1 {
+        font-size: 18px; /* Adjust font size for smaller screens */
+        text-align: center;
+    }
+
+    .wrt p {
+        font-size: 14px; /* Adjust paragraph font size for readability */
+    }
+    .wrt1{
+        order: 1;
+    }
+    .pic1{
+        order: 2;
+    }
+    .wrt2{
+        order: 3;
+    }
+    .pic2{
+        order: 4;
+       
+    }
+    .wrt3{
+        order: 5;
+    }
+    .pic3{
+        order: 6;
+    }
+}
+
+
+/* -------------------------FOOTER--------------------------------------- */
+
+
+
+#contact{
+        width: 100%;
+        height: 50vh;
+        background-color: #0077b5;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        align-content: center;
+        justify-content: space-around;
+        padding: 20px 0;
+       
+        }
+        #contact> div{
+
+        color: white;
+        /* border: 2px solid black; */
+        } 
+        .con1{
+    
+            margin-top: 45px;
+        }
+        .con1 img{
+            width: 200px;
+            height: 200px;
+        }
+        .con2{
+        padding: 20px;
+        /* border: 2px solid black; */
+        }
+        .con3{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-content: space-around;
+        /* border: 2px solid black; */
+
+        }
+        .con3> div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        transition: transform 0.3s ease;
+        /* border: 2px solid black; */
+        }
+        .con3> div:hover{
+        transform: scale(1.15);
+        }
+
+        @media screen and (max-width: 1000px) {
+        #contact {
+            min-height: fit-content;
+            display: flex;
+            flex-direction: column; /* Stack the elements vertically */
+            align-items: center; /* Center align the elements */
+            gap:5px; /* Add some spacing between the elements */
+            /* border: 1px solid yellow; */
+            margin-top: 0;
+        }
+
+        .con2 {
+            /* border: 3px solid blue; */
+            justify-content: center; 
+            align-items: center; 
+            margin-left: 10px;
+            /* width: 100%;   */
+            height: fit-content;
+            width: fit-content;
+        }
+
+        .con3 {
+            width: 100%;
+            display: grid;
+            grid-template-rows: repeat(1, 1fr); 
+            gap: 1px;
+            /* border: 1px solid blue; */
+        }
+
+        .con1 {
+            order: 3; 
+            display: flex;
+             justify-content: center; 
+            align-items: center;    
+            width: 100%;   
+            /* border: 1px solid blue;  */
+           
+            
+        
+        }
+        .con1 img {
+            width: 150px; 
+            height: 150px;
+            order: 3;  
+        }
+    }
+  
+

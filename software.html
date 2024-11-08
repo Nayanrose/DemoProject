@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="software.css">
+    
+ 
+</head>
+<body>
+    <section> 
+        <nav>
+            <div class="icon"><img src="images/CARVINGSOFT.png" alt="logo" ></div> 
+                 <div class="menu-icon">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                 </div>
+                 <div class="nav-links">
+                     <ul>
+                         <li><a href="web.html">HOME</a></li>
+                         <li><a href="about.html">ABOUT</a></li>
+                         <li>
+                            <a href="#services1">SERVICES</a>
+                            <div class="dropdown">
+                                <a href="software.html"><span>SOFTWARE</span></a>
+                                <a href="hardware.html"><span>HARDWARE</span></a>
+                                <a href="infrastructure.html"><span>INFRASTRUCTURE</span></a>
+                            </div>
+                        </li>
+                         <li><a href="#contact">CONTACT</a></li>
+                     </ul>
+                 </div>
+        </nav>
+        <div class="header" id="home">
+            <video autoplay muted loop >
+                <source src="images/software.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+
+            <div class="content">
+                <h1>Software Services</h1>
+            </div>
+
+        </div>
+    </section>
+    <section>
+        <div class="services-container">
+            <h1>Our Services</h1>
+            <div class="service-box">
+                <img src="images/webde.png" alt="Service 1">
+                <div class="service-content">
+                    <h3>Customized Web-App Devolpment</h3>
+                    <p class="short-description">Building responsive Web-App Devolpment.</p>
+                    <p class="detailed-description">In the modern business landscape, having a dynamic, user-friendly, and scalable web application is essential for improving customer engagement and optimizing operations. Our customized web-app development services are designed to turn your unique business requirements into powerful digital solutions that drive growth and enhance user experience.
+
+                        <br><b>Custom Web Application Design and Development</b><br>
+                       We build web applications from scratch, tailored to your specific requirements. Whether you need a simple solution or a complex enterprise system, our team will create a user-friendly, responsive application that delivers seamless performance.
+                        
+                        <br><b>API Integration and Development</b>
+                        Our expert team connects your web application with third-party services through custom API integrations, enabling smooth data flow and interaction with other systems, thus enhancing functionality and user experience.
+                        
+                        <br><b>Progressive Web Apps (PWA)</b>
+                        Combine the best of web and mobile applications with our Progressive Web App solutions. PWAs are fast, reliable, and engage users on multiple platforms, offering an app-like experience right from their web browser.
+                        
+                        <br><b>E-commerce Solutions</b>
+                        Expand your business online with our robust, scalable, and secure e-commerce web applications. We develop custom platforms that manage your products, payments, and customers while delivering a smooth shopping experience.
+                        
+                        <br><b>Maintenance and Support</b>
+                        We provide ongoing maintenance and support for your web application to ensure it operates efficiently. From troubleshooting to updates, we keep your app running smoothly and securely, allowing you to focus on your core business.
+                        
+                        <br><b>Get Started Today!</b>
+                        Are you ready to bring your vision to life with a customized web application? Contact us today to discuss your project or learn how we can tailor a solution to meet your business goals.</p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+            </div>
+    
+    
+            <div class="service-box">
+                <img src="images/webdesi.png" alt="Service 3">
+                <div class="service-content">
+                    <h3>Website Design</h3>
+                    <p class="short-description">Improve your search rankings.</p>
+                    <p class="detailed-description">Website designing involves creating visually appealing, user-friendly layouts with responsive design, intuitive navigation, and engaging content. It combines elements like color schemes, typography, and multimedia to enhance user experience across all devices.</p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+<br>
+<br>
+<br>
+<section id="contact">
+    <div class="con1"> <img src="images/CARVINGSOFT.png" alt="logo"></div>
+    <div class="con2"> <h1>Get In Touch..</h1><br><br>
+        <p>Heavenly Plaza<br>Civil Line Rd, Chembumukku,<br>Vazhakkala, Kakkanad,<br>Kochi, Kerala 682021
+        </p><br><br>
+        <p>Phone: 6847478, 8585883</p>
+        <p>Mail: carvingsoft@gmail.com</p>
+    </div>
+    <div>
+        <br><h1>Connect Us..</h1><br><br>
+        <div class="con3">
+            
+            <div><a href="https://www.facebook.com/"><img src="images/f.png" alt="FBicon"></a></div>
+            <div><a href="https://web.whatsapp.com/"><img src="images/w.png" alt="Wappcon"></a></div>
+            <div><a href="https://www.linkedin.com/"><img src="images/l.png" alt="Ldincon"></a></div>
+            <div><a href="https://x.com/"><img src="images/t.png" alt="twticon"></a></div>
+
+        </div>
+    </div> 
+    
+
+<script>
+
+const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('show-nav');
+        });
+
+
+    const servicesLink = document.querySelector('a[href="#services1"]');
+const dropdown = document.querySelector('.dropdown');
+
+// Toggle the dropdown on click
+servicesLink.addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent default anchor behavior
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+    if (!servicesLink.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.style.display = 'none';
+    }
+});
+
+
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const detailedDescription = this.previousElementSibling;
+            detailedDescription.style.display = detailedDescription.style.display === 'block' ? 'none' : 'block';
+            this.textContent = detailedDescription.style.display === 'block' ? 'Read Less' : 'Read More';
+        });
+    });
+
+</script>
+
+</body>
+</html>

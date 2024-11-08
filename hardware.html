@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hardware.css">
+    
+</head>
+<body>
+    <section> 
+        <nav>
+            <div class="icon"><img src="images/CARVINGSOFT.png" alt="logo" ></div> 
+                 <div class="menu-icon">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                 </div>
+                 <div class="nav-links">
+                     <ul>
+                         <li><a href="web.html">HOME</a></li>
+                         <li><a href="about.html">ABOUT</a></li>
+                         <li>
+                            <a href="#services1">SERVICES</a>
+                            <div class="dropdown">
+                                <a href="software.html"><span>SOFTWARE</span></a>
+                                <a href="hardware.html"><span>HARDWARE</span></a>
+                                <a href="infrastructure.html"><span>INFRASTRUCTURE</span></a>
+                               
+                            </div>
+                        </li>
+                         <li><a href="#contact">CONTACT</a></li>
+                     </ul>
+                 </div>
+        </nav>
+        <div class="header" id="home">
+            <video autoplay muted loop >
+                <source src="images/hard.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+
+            <div class="content">
+                <h1>Hardware Services</h1>
+            </div>
+
+        </div>
+    </section>
+<section>
+    <div class="services-container">
+        <h1>Our Services </h1>
+        <div class="service-box">
+            <img src="images/des1.png" alt="Service 1">
+            <div class="service-content">
+                <h3>Desktop</h3>
+                <p class="short-description">Business PCs tailored for productivity and security.</p>
+                <p class="detailed-description">Providing tailored business desktops equipped with necessary software, 
+                    security protocols, and regular updates, ensuring smooth daily operations, productivity, and seamless
+                     employee collaboration in office environments. </p>
+                     <button class="read-more-btn">Read More</button>
+            </div>
+        </div>
+    
+        <div class="service-box">
+            <img src="images/ser1.png" alt="Service 2">
+            <div class="service-content">
+                <h3>Server</h3>
+                <p class="short-description">Dedicated servers for hosting business operations.</p>
+                <p class="detailed-description">Offering dedicated, scalable servers for business data storage,
+                    application hosting, and resource management, ensuring high availability, security, and 
+                    seamless performance to support growing business needs.</p>
+                    <button class="read-more-btn">Read More</button>
+            </div>
+        </div>
+    
+        <div class="service-box">
+            <img src="images/fire.png" alt="Service 3">
+            <div class="service-content">
+                <h3>Firewalls</h3>
+                <p class="short-description">Network security protection from cyber threats.</p>
+                <p class="detailed-description">Implementing advanced firewalls for monitoring and controlling
+                     network traffic, protecting company data from cyberattacks, malware, and unauthorized 
+                     access, ensuring business compliance and network security.</p>
+                     <button class="read-more-btn">Read More</button>
+            </div>
+        </div>
+
+       
+        <div class="service-box">
+            <img src="images/router.png" alt="Service 3">
+            <div class="service-content">
+                <h3>Router</h3>
+                <p class="short-description">Secure internet connectivity for business networks.</p>
+                <p class="detailed-description">Providing secure, reliable routers to enable fast internet
+                     connections and data transmission between internal and external networks, facilitating 
+                     smooth business communication and cloud service access.</p>
+                     <button class="read-more-btn">Read More</button>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <img src="images/switch.png" alt="Service 3">
+            <div class="service-content">
+                <h3>Switches</h3>
+                <p class="short-description">Efficient internal communication between network devices.</p>
+                <p class="detailed-description">Setting up managed switches to optimize internal device 
+                    communication, improve network performance, reduce congestion, and support business 
+                    growth through scalable local area networks (LAN).</p>
+                    <button class="read-more-btn">Read More</button>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<section id="contact">
+    <div class="con1"> <img src="images/cstlogo.png" alt="logo" width="200px" height="200px"></div>
+    <div class="con2"> <h1>Get In Touch..</h1><br>
+        <p>Heavenly Plaza<br>Civil Line Rd, Chembumukku,<br>Vazhakkala, Kakkanad,<br>Kochi, Kerala 682021
+        </p>
+        <p>Phone: 6847478, 8585883<br>Mail: carvingsoft@gmail.com</p>
+        
+    </div>
+    <div>
+        <br><h1>Connect Us..</h1><br>
+        <div class="con3">
+            
+            <div><a href="https://www.facebook.com/"><img src="images/f.png" alt="FBicon"></a></div>
+            <div><a href="https://web.whatsapp.com/"><img src="images/w.png" alt="Wappcon"></a></div>
+            <div><a href="https://www.linkedin.com/"><img src="images/l.png" alt="Ldincon"></a></div>
+            <div><a href="https://x.com/"><img src="images/t.png" alt="twticon"></a></div>
+
+        </div>
+    </div>
+    
+</section>
+
+
+<script>
+
+    const menuIcon = document.querySelector('.menu-icon');
+            const navLinks = document.querySelector('.nav-links');
+    
+            menuIcon.addEventListener('click', () => {
+                navLinks.classList.toggle('show-nav');
+            });
+    
+    
+        const servicesLink = document.querySelector('a[href="#services1"]');
+    const dropdown = document.querySelector('.dropdown');
+    
+    // Toggle the dropdown on click
+    servicesLink.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default anchor behavior
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!servicesLink.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+    
+    
+        const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    
+        readMoreButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const detailedDescription = this.previousElementSibling;
+                detailedDescription.style.display = detailedDescription.style.display === 'block' ? 'none' : 'block';
+                this.textContent = detailedDescription.style.display === 'block' ? 'Read Less' : 'Read More';
+            });
+        });
+    
+    </script>
+
+
+
+</body>
+</html>

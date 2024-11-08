@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+    <!-------------------------NAVBAR--------------------------------------->
+    <nav>
+        <div class="icon"><img src="images/CARVINGSOFT.png" alt="logo" ></div> 
+             <div class="menu-icon">
+                 <span></span>
+                 <span></span>
+                 <span></span>
+             </div>
+             <div class="nav-links">
+                 <ul>
+                     <li><a href="web.html">HOME</a></li>
+                     <li><a href="about.html">ABOUT</a></li>
+                     <li>
+                         <a href="#services1">SERVICES</a>
+                          <div class="dropdown">
+                             <a href="software.html"><span>SOFTWARE</span></a>
+                             <a href="hardware.html"><span>HARDWARE</span></a>
+                             <a href="infrastructure.html"><span>INFRASTRUCTURE</span></a>
+                         </div> 
+                     </li>
+                     <li><a href="#contact">CONTACT</a></li>
+                 </ul>
+             </div>
+        
+     </nav>
+
+
+
+
+    <!-------------------------ABOUT US--------------------------------------->
+     <div class="aboutus">
+        <div class="about">
+            <div class="wrt wrt1">
+                <h1>ABOUT US</h1>
+                <p>At Carvingsoft Technologies, we offer a comprehensive suite of services meticulously designed to meet the 
+                    diverse needs of businesses navigating today's fast-paced digital landscape. We are 
+                    committed to deliver high-quality solutions across various domains, including web applications, software 
+                    development, network solutions, cloud services, and security services.
+                   <p>Whether you're looking to enhance your online presence with robust web applications, streamline your operations 
+                    with custom software development, or secure your digital assets with top-notch security services, we are here to 
+                    support your journey towards digital excellence.</p>
+
+                </p>
+                
+            </div>
+            <div class="pic pic1"></div>
+        </div>
+        <div class="vision">
+            <div class="pic pic2"></div>
+            <div class="wrt wrt2">
+                <h1>OUR VISION</h1>
+                <p>Our vision is to empower businesses through innovative technology solutions that foster growth 
+                    and resilience. We strive to be a leader in the IT industry by delivering exceptional services 
+                    that adapt to the evolving digital landscape, ensuring our clients achieve their goals while 
+                    embracing the future with confidence and creativity.
+                </p>
+            </div>
+        </div>
+        <div class="mission">
+            <div class="wrt wrt3">
+                <h1>OUR MISSION</h1>
+                <p>Our mission is to provide cutting-edge technology solutions that drive business success and enhance
+                     operational efficiency. We are committed to delivering exceptional service, fostering strong
+                      partnerships, and cultivating a culture of innovation. By leveraging our expertise, we aim to 
+                      empower our clients to thrive in a rapidly changing digital world.
+                </p>
+            </div>
+            <div class="pic pic3"></div>
+        </div>
+     </div>
+     
+
+
+
+
+    <!-------------------------FOOTER--------------------------------------->
+
+
+     <section id="contact">
+        <div class="con1"> <img src="images/CARVINGSOFT.png" alt="logo"></div>
+        <div class="con2"> <h1>Get In Touch..</h1><br><br>
+            <p>Heavenly Plaza<br>Civil Line Rd, Chembumukku,<br>Vazhakkala, Kakkanad,<br>Kochi, Kerala 682021
+            </p><br><br>
+            <p>Phone: 6847478, 8585883</p>
+            <p>Mail: carvingsoft@gmail.com</p>
+        </div>
+        <div>
+            <br><h1>Connect Us..</h1><br><br>
+            <div class="con3">
+                
+                <div><a href="https://www.facebook.com/"><img src="images/f.png" alt="FBicon"></a></div>
+                <div><a href="https://web.whatsapp.com/"><img src="images/w.png" alt="Wappcon"></a></div>
+                <div><a href="https://www.linkedin.com/"><img src="images/l.png" alt="Ldincon"></a></div>
+                <div><a href="https://x.com/"><img src="images/t.png" alt="twticon"></a></div>
+
+            </div>
+        </div> 
+        
+    </section> 
+     <script>
+
+    const servicesLink = document.querySelector('a[href="#services1"]');
+    const dropdown = document.querySelector('.dropdown');
+
+    // Toggle the dropdown on click
+    servicesLink.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default anchor behavior
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!servicesLink.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+
+
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('show-nav');
+        });
+    </script>
+</body>
+</html>

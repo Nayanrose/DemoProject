@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Map with Hover Effect</title>
+    <style>
+        body {
+            background-color: rgb(18, 95, 131);
+            margin: auto 0;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+        }
+        img {
+            position: relative;
+            left: 30vw;
+        }
+        h3 {
+            font-size: 30px;
+            position: relative;
+            left: 20vw;
+        }
+        h3, h4 {
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: lighter;
+        }
+        h4 {
+            position: relative;
+            left: 10vw;
+            top: 4vh;
+        }
+        
+        /* Hover Effect Circle Style */
+        .hover-circle {
+            position: absolute;
+            border-radius: 50%;
+            /* background-color: rgba(255, 255, 255, 0.3); Transparent hover color */
+            background: transparent;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+
+        .hover-circle:hover {
+            background-color: rgba(255, 255, 255, 0.6); /* More visible on hover */
+        }
+
+        /* Position hover effects exactly over the image */
+        .hover-circle-1 {
+            top: 265px;
+            left: calc(30vw + 60px); /* Adjust based on image positioning */
+            width: 60px;
+            height: 60px;
+        }
+
+        .hover-circle-2 {
+            top: 340px;
+            left: calc(30vw + 170px);
+            width: 60px;
+            height: 60px;
+        }
+
+        .hover-circle-3 {
+            top: 192px;
+            left: calc(30vw + 170px);
+            width: 60px;
+            height: 60px;
+        }
+
+          /* Title styles */
+          .title {
+            position: absolute;
+            font-size: 25px;
+            color: rgb(233, 240, 242);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Hover titles that will show up */
+        .hover-circle-1:hover ~ .title-1,
+        .hover-circle-2:hover ~ .title-2,
+        .hover-circle-3:hover ~ .title-3 {
+            opacity: 1;
+        }
+
+        /* Title positions */
+        .title-1 {
+            top: 290px;
+            left: calc(17vw + 60px);
+        }
+
+        .title-2 {
+            top: 370px;
+            left: calc(36vw + 170px);
+        }
+
+        .title-3 {
+            top: 220px;
+            left: calc(36vw + 170px);
+        }
+    </style>
+</head>
+<body>
+    <img src="images/logo11 (3).png" usemap="#logomap">
+
+    <!-- Hover Circle 1 -->
+    <div class="hover-circle hover-circle-1" onclick="window.location.href='demo.html'"></div>
+    <!-- Hover Circle 2 -->
+    <div class="hover-circle hover-circle-2" onclick="window.location.href='demo.html'"></div>
+    <!-- Hover Circle 3 -->
+    <div class="hover-circle hover-circle-3" onclick="window.location.href='demo.html'"></div>
+
+    <div class="title title-1">Cloud Security</div>
+    <div class="title title-2">Security Services</div>
+    <div class="title title-3">App Devolopment</div>
+
+    <h3>CARVINGSOFT</h3><br>
+    <h4>TECHNOLOGIES</h4>
+
+    <map name="logomap">
+        <!-- The circles below work as backup, but the hover effect will be handled by the divs above -->
+        <area shape="circle" coords="90,158,35" href="demo1.html">
+        <area shape="circle" coords="201,229,35" href="demo2.html">
+        <area shape="circle" coords="201,87,36" href="demo3.html">
+    </map>
+</body>
+</html>

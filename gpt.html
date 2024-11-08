@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Animated Text</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #0077b5;
+            overflow: hidden;
+        }
+
+        /* Navigation Styling */
+        .nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        /* Company Name on the Left */
+        .company-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0077b5;
+            padding-left: 40px;
+        }
+
+        /* Buttons on the Right */
+        .nav-menu {
+            display: flex;
+            justify-content: flex-end;
+            column-gap: 40px;
+        }
+
+        .nav-menu div {
+            display: inline-block;
+        }
+
+        .nav-menu button {
+            background-color: #ffffff;
+            border: 2px solid #004f8a;
+            color: #0077b5;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-menu button:hover {
+            background-color: #0077b5;
+            color: white;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* Full-Screen Image Styling */
+        .img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Text Overlay with Animation */
+        .text-overlay {
+            position: absolute;
+            top: 30%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            animation: slide-in 2s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes slide-in {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .nav-menu {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+            .nav-menu button {
+                margin-bottom: 10px;
+            }
+            .text-overlay {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Section -->
+    <div class="nav">
+        <!-- Company Name on the Left -->
+        <div class="company-name">CarvingSoft</div>
+
+        <!-- Navigation Menu on the Right -->
+        <div class="nav-menu">
+            <div><button>What We Are</button></div>
+            <div><button>Industries</button></div>
+            <div><button>Our Approach</button></div>
+            <div><button>Who We Are</button></div>
+            <div><button>Careers</button></div>
+        </div>
+    </div>
+
+    <!-- Full-Screen Image -->
+    <div class="img">
+        <img src="img2.png" alt="Full Screen Image">
+    </div>
+
+    <!-- Text Overlay with Animation -->
+    <div class="text-overlay">
+        <h3>CLIENT SPECIFIC SOFTWARE MOULDING</h3>
+        <p>A software should sync with the soul of a company and CarvingSoft makes sure that it does</p>
+    </div>
+
+</body>
+</html>
